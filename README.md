@@ -1,6 +1,8 @@
 # django-angularjs-webpack
 A boilerplate for AngularJS built with Webpack and Django framework.
 
+The current solution is optimized for Windows environments. In order to fix it for other environments change `"scripts"` object inside `package.json` file.
+
 ## Installation
 #### Clone the repository
 ```git clone git@github.com:matoxxx/django-angularjs-webpack.git```
@@ -12,10 +14,10 @@ A boilerplate for AngularJS built with Webpack and Django framework.
 ```npm install```
 
 #### Run client (node)
-```npm start```
+```npm run start```
 
 #### Build production (node)
-Coming soon...
+```npm run build```
 
 
 We are done.

@@ -21,7 +21,6 @@
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.0",
     "less-loader": "^4.0.3",
-    "node-sass": "^4.5.2,
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.3",
     "scss-loader": "0.0.1",
@@ -32,7 +31,7 @@
   },
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server.cmd --content-base resources/assets/js/src/app",
-    "test": "mocha"
+    "build": "set NODE_ENV=production && \"node_modules/.bin/webpack.cmd\" && cp resources/assets/js/src/app/index.html webapp/templates/webapp/index.html"
   },
   "repository": {
     "type": "git",
