@@ -30,8 +30,9 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server.cmd --content-base resources/assets/js/src/app",
-    "build": "set NODE_ENV=production && \"node_modules/.bin/webpack.cmd\" && cp resources/assets/js/src/app/index.html webapp/templates/webapp/index.html"
+    "pack": "node_modules/.bin/webpack.cmd",
+    "dev": "npm run pack && \"node_modules/.bin/webpack-dev-server.cmd\" --content-base resources/assets/js/src/app",
+    "build": "set NODE_ENV=production && npm run pack && cp resources/assets/js/src/app/index.html webapp/templates/webapp/index.html"
   },
   "repository": {
     "type": "git",

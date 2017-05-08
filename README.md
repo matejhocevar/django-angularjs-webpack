@@ -14,7 +14,7 @@ The current solution is optimized for Windows environments. In order to fix it f
 ```npm install```
 
 #### Run client (node)
-```npm run start```
+```npm run dev```
 
 #### Build production (node)
 ```npm run build```

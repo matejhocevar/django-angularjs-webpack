@@ -6,7 +6,7 @@ var config = {
   context: __dirname + '/resources/assets/js/src/app',
   entry: ['./index.js'],
   output: {
-    path: __dirname + '/resources/assets/js/src/app',
+    path: __dirname + '/resources/assets/js/src/app/static',
     filename: 'bundle.js'
   },
   plugins: [],
@@ -27,5 +27,7 @@ if(env == 'production') {
   config.plugins.push(new webpack.optimize.UglifyJsPlugin());
   // config.devtool = 'source-map';   // enable source map for debugging in production
 }
+
+console.log('Path: ', config.output.path);
 
 module.exports = config;
