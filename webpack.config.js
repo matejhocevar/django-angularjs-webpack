@@ -8,7 +8,11 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
-      {test: /\.html$/, loader: 'raw-loader'}
+      {test: /\.html$/, loader: 'raw-loader'},
+      // {test: /\.css/, loader: 'style-loader!css-loader'},
+      {test: /\.scss/, loader: 'style-loader!css-loader!sass-loader'},
+      // {test: /\.styl/, loader: 'style-loader!css-loader!stylus-loader'},
+      // {test: /\.less/, loader: 'style-loader!css-loader!less-loader'}
     ]
   }
 };

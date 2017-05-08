@@ -1,3 +1,5 @@
+require('./hello.style.scss');
+
 class HelloController {
   constructor() {
     this.greeting = 'Hello webpack!';

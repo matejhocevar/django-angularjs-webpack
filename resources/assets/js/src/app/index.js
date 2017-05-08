@@ -1,3 +1,5 @@
+require('./index.style.scss');
+
 const angular = require('angular');
 const angularModule = angular.module('app', []);
 
