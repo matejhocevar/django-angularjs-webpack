@@ -1,5 +1,5 @@
 # django-angularjs-webpack
-A boilerplate for AngularJS build with Webpack and Django framework.
+A boilerplate for AngularJS built with Webpack and Django framework.
 
 ## Installation
 #### Clone the repository
