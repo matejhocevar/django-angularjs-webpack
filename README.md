@@ -1,5 +1,5 @@
-# django-vue-webpack
-A boilerplate of using Django as backend framework, Vue js and webpack as the frontend setup.
+# django-angularjs-webpack
+A boilerplate for AngularJS build with Webpack and Django framework.
 
 ## Installation
 #### Clone the repository
