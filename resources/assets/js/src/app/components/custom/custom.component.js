@@ -1,6 +1,6 @@
 class CustomController {
   constructor() {
-    this.text = 'This is a custom component!';
+    this.text = '..and also a custom component.';
   }
 }
 

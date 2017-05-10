@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 body {
-  background: sandybrown;
+  background: cornsilk;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+
+  h1 {
+    margin-top: 100px;
+    color: #2e2e2e;
+  }
 }
