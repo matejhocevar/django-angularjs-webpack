@@ -8,13 +8,59 @@ var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 var env = process.env.NODE_ENV ? process.env.NODE_ENV.replace(" ", "") : null;    // because command 'set NODE_ENV=...' adds tailing space
 
 var config = {
-  context: __dirname + '/resources/assets/js/src/app',
+  context: __dirname + '/frontend',
   entry: ['./index.app.js'],
   output: {
-    path: __dirname + '/resources/assets/js/src/app/static',
-    filename: 'bundle.js'
+    path: __dirname + '/frontend/static',
+    filename: 'js/[name].[hash].js',
+    chunkFilename: 'js/[id].[hash].js'
   },
-  plugins: [],
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      sourceMap: true
+    }),
+    // extract css into its own file
+    new ExtractTextPlugin({
+      filename: __dirname + '/frontend/css/[name].[hash].css'
+    }),
+    new HtmlWebpackPlugin({
+      filename: __dirname + '/frontend/index.html',
+      template: 'base.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+        // more options:
+        // https://github.com/kangax/html-minifier#options-quick-reference
+      },
+      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+      chunksSortMode: 'dependency'
+    }),
+    // split vendor js into its own file
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module, count) {
+        // any required modules inside node_modules are extracted to vendor
+        return (
+          module.resource &&
+          /\.js$/.test(module.resource) &&
+          module.resource.indexOf(
+            path.join(__dirname, '../node_modules')
+          ) === 0
+        )
+      }
+    }),
+    // extract webpack runtime and module manifest to its own file in order to
+    // prevent vendor hash from being updated whenever app bundle is updated
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      chunks: ['vendor']
+    }),
+  ],
   module: {
     loaders: [
       {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
@@ -40,12 +86,12 @@ if(env == 'production') {
   config.plugins.push(
     new CopyWebpackPlugin([
       {
-        from: __dirname + '/resources/assets/js/src/app/static',
+        from: __dirname + '/frontend/static',
         to: __dirname + '/webapp/static',
         ignore: ['.*']
       },
       {
-        from: __dirname + '/resources/assets/js/src/app/index.html',
+        from: __dirname + '/frontend/index.html',
         to: __dirname + '/webapp/templates/webapp/index.html'
       }
     ])
