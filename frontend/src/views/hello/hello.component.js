@@ -10,7 +10,7 @@ HelloController.$inject = []
 
 const helloComponent = {
   controller: HelloController,
-  controllerAs: 'vm',
+  controllerAs: 'ctrl',
   template: require('./hello.template.html')
 }
 

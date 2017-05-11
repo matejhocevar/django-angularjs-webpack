@@ -33,6 +33,3 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     ))
   })
 })
-
-console.log('Assets root', config.build.assetsRoot)
-console.log('Assets sub directory', config.build.assetsSubDirectory)

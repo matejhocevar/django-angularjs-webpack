@@ -10,11 +10,9 @@ A boilerplate for Django Framework and Angular 1.x application packed with Webpa
 * Source maps included in all builds.
 * Testing environment using karma to run tests and jasmine as the framework.
 * Code coverage when tests are run.
-* Analytics of production build
+* Analytics of production build.
+* Dynamic load of assets.
 * No gulp and no grunt, just npm scripts.
-
-### To be done:
-* Proper loading of assets.
 
 >Warning: Make sure you're using the latest version of Node.js and NPM
 

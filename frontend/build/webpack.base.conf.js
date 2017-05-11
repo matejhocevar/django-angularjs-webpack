@@ -17,14 +17,19 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  resolve: {
+	  alias: {
+	   'Images': resolve(config.build.assetsRoot, '/assets')
+	  }
+  },
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
-      {test: /\.html$/, loader: 'raw-loader', exclude: /node_modules/},
-      {test: /\.css/, loader: 'style-loader!css-loader', exclude: /node_modules/},
-      {test: /\.scss/, loader: 'style-loader!css-loader!sass-loader', exclude: /node_modules/},
-      // {test: /\.styl/, loader: 'style-loader!css-loader!stylus-loader'},
-      // {test: /\.less/, loader: 'style-loader!css-loader!less-loader'}
+		{test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
+		{test: /\.html$/, loader: 'raw-loader', exclude: /node_modules/},
+		{test: /\.css/, loader: 'style-loader!css-loader', exclude: /node_modules/},
+		{test: /\.scss/, loader: 'style-loader!css-loader!sass-loader', exclude: /node_modules/},
+		// {test: /\.styl/, loader: 'style-loader!css-loader!stylus-loader'},
+		// {test: /\.less/, loader: 'style-loader!css-loader!less-loader'}
     ]
   }
 }

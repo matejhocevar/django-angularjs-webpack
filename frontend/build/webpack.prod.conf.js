@@ -20,6 +20,11 @@ var webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
+  module:{
+	  loaders:[
+		  {test:/\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/, loader:'file-loader?name=static/images/[sha512:hash:base64:7].[ext]'},
+	  ]
+  },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
@@ -50,7 +55,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         ? 'index.html'
         : config.build.index,
       template: config.build.template,
-      inject: false,
+      inject: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
