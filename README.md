@@ -1,9 +1,22 @@
 # django-angularjs-webpack
-A boilerplate for AngularJS built with Webpack and Django framework.
+A boilerplate for Django Framework and Angular 1.x application packed with Webpack 2.x.
 
 ![Django + AngularJs + Webpack](https://raw.githubusercontent.com/matoxxx/django-angularjs-webpack/cdf9c68f/frontend/static/assets/logo.png)
 
-The current solution is optimized for Windows environments. In order to fix it for other environments change `"scripts"` object inside `package.json` file.
+* ES6, and ES7 support with babel.
+* Development server with hot reload.
+* Production builds with cache busting.
+* ESLint supported.
+* Source maps included in all builds.
+* Testing environment using karma to run tests and jasmine as the framework.
+* Code coverage when tests are run.
+* Analytics of production build
+* No gulp and no grunt, just npm scripts.
+
+### To be done:
+* Proper loading of assets.
+
+>Warning: Make sure you're using the latest version of Node.js and NPM
 
 ## Installation
 #### Clone the repository
@@ -15,14 +28,17 @@ The current solution is optimized for Windows environments. In order to fix it f
 #### Install npm packages
 ```npm install```
 
-#### Run client (node)
+#### Run client
 ```npm run dev```
 
-#### Build production (node)
+#### Build production
 ```npm run build```
 
+#### Build production with report
+```npm run build --report```
 
-We are done.
+
+Here you go.
 
 #### Enjoy coding
   * Frontend: http://localhost:8080/
@@ -30,10 +46,12 @@ We are done.
 
 
 ## Inspiration
-Inspired by projects:
+Heavily inspired by projects:
 
   * [AngularJs Webpack boilerplate](https://github.com/preboot/angularjs-webpack)
   * [Django Vue Webpack boilerplate](https://github.com/longtranista/django-vue-webpack)
+
+Thank you guys for your awesome work!
 
 ## Authors
   * Matej Hočevar (matoxxx)
