@@ -1,6 +1,8 @@
 # django-angularjs-webpack
 A boilerplate for AngularJS built with Webpack and Django framework.
 
+![Django + AngularJs + Webpack](https://raw.githubusercontent.com/matoxxx/django-angularjs-webpack/cdf9c68f/frontend/static/assets/logo.png)
+
 The current solution is optimized for Windows environments. In order to fix it for other environments change `"scripts"` object inside `package.json` file.
 
 ## Installation
